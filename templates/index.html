@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>匿名SNS</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>匿名SNS</h1>
+    <form method="POST">
+        <textarea name="content" placeholder="今の気持ちを書いてみよう..." required></textarea><br>
+        <button type="submit">投稿</button>
+    </form>
+
+    <hr>
+
+    <div class="posts">
+        {% for content, timestamp in posts %}
+            <div class="post">
+                <p>{{ content }}</p>
+                <small>{{ timestamp }}</small>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
